@@ -46,3 +46,6 @@ def signup(request):
 
 def burgermenu(request):
         return render(request,"burgermenu.html")
+
+def checkout(request):
+        return render(request,"checkout.html")
