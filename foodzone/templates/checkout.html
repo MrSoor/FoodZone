@@ -11,29 +11,51 @@
     </div>
   </div>
 
-<div class="menu">
-    <div class="container">
-        <div class="section-header text-center">
-            <h2>Order Details</h2>
+  <div class="container">
+    <div class="cart-summary" id="cart-summary">
+        <h2>Your Cart</h2>
+        <div class="cart-items" id="cart-items">
+            <div class="cart-item" id="cart-item-1">
+                <img src="/static/img/burger.jpg" alt="Mini Cheese Burger">
+                <div class="item-details">
+                    <h3>Mini Cheese Burger</h3>
+                    <p>$9.00</p>
+                    <input type="number" id="quantity-1" value="1" min="1">
+                    <button class="remove-btn" id="remove-btn-1">Remove</button>
+                </div>
+            </div>
+            <!-- Add more cart items here -->
         </div>
-        <div class="menu-tab">
-            <div class="tab-content">
-                <div id="burgers" class="container tab-pane active">
-                    <div class="row">
-                        {% comment %} <div class="col-lg-7 col-md-12">
-                            <div class="menu-item">
-                                
-                            </div>
-                        </div> {% endcomment %}
-                        <div class="col-lg-5 d-none d-lg-block left-0" >
-                            <img src="/static/img/menu-burger-img.jpg"  alt="Image">
-                        </div>
+        <div class="cart-total" id="cart-total">
+            <h3>Total: $9.00</h3>
+        </div>
+    </div>
 
-                        <div class="menu-img">
-                            <img src="/static/img/menu-burger.jpg" alt="Image">
-                            <div class="menu-text">
-                                <h3><span>Mini cheese Burger</span> <strong>$9.00</strong></h3>
-                            </div>
-                        </div>
+    <div class="checkout-form" id="checkout-form">
+        <h2>Checkout</h2>
+        <form>
+            <div class="form-group" id="name-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group" id="email-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group" id="address-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" required></textarea>
+            </div>
+            <div class="form-group" id="payment-group">
+                <label for="payment">Payment Method:</label>
+                <select id="payment" name="payment" required>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+            </div>
+            <button type="submit" class="submit-btn" id="submit-btn">Place Order</button>
+        </form>
+    </div>
+</div>
                         
 {% endblock  %}
