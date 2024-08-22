@@ -19,7 +19,25 @@
 <!-- Page Header End -->
 
 
-<!-- Team Start -->
+<!-- Checkout Start -->
+<div class="container">
+    <div class="cart-summary" id="cart-summary">
+        <h2>Your Cart</h2>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-total" id="cart-total">
+            <h3>Total: $0.00</h3>
+        </div>
+       <form action="/checkout" >
+        <button type="submit" class="submit-btn" id="submit-btn">Checkout</button>
+       </form>
+
+    </div>
+</div>
+<!-- Checkout End -->
+
+<!-- Burger Menu Start -->
 <div class="team">
   <div class="container">
       <div class="section-header text-center">
@@ -39,8 +57,8 @@
                 </div>
                 <div class="team-text">
                     <h2>Vage Burger</h2>
-                    <p class="price" data-price="9.00">$9.00</p>
-                    <button class="add-to-cart-btn" data-name="Vage Burger" data-price="9.00">Add to Cart</button>
+                    <p class="price" data-price="199.00">₹199.00</p>
+                    <button class="add-to-cart-btn" data-name="Vage Burger" data-price="199.00">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -57,8 +75,8 @@
                   </div>
                   <div class="team-text">
                       <h2>Craiyon Burger</h2>
-                      <p class="price" data-price="9.00">$9.00</p>
-                    <button class="add-to-cart-btn" data-name="Craiyon Burger" data-price="9.00">Add to Cart</button>
+                      <p class="price" data-price="249.00">₹249.00</p>
+                    <button class="add-to-cart-btn" data-name="Craiyon Burger" data-price="249.00">Add to Cart</button>
                   </div>
               </div>
           </div>
@@ -74,8 +92,8 @@
                   </div>
                   <div class="team-text">
                       <h2>Cheese Burger</h2>
-                      <p class="price" data-price="9.00">$9.00</p>
-                      <button class="add-to-cart-btn" data-name="Cheese Burger" data-price="9.00">Add to Cart</button>
+                      <p class="price" data-price="99.00">₹99.00</p>
+                      <button class="add-to-cart-btn" data-name="Cheese Burger" data-price="99.00">Add to Cart</button>
                   </div>
               </div>
           </div>
@@ -91,8 +109,8 @@
                   </div>
                   <div class="team-text">
                       <h2>Vegan Burger</h2>
-                      <p class="price" data-price="9.00">$9.00</p>
-                      <button class="add-to-cart-btn" data-name="Vegan Burger" data-price="9.00">Add to Cart</button>
+                      <p class="price" data-price="299.00">₹299.00</p>
+                      <button class="add-to-cart-btn" data-name="Vegan Burger" data-price="299.00">Add to Cart</button>
                   </div>
               </div>
           </div>
@@ -108,8 +126,8 @@
                   </div>
                   <div class="team-text">
                       <h2>RedChilli NonVeg Burger</h2>
-                      <p class="price" data-price="9.00">$9.00</p>
-                      <button class="add-to-cart-btn" data-name="RedChilli NonVeg Burger" data-price="9.00">Add to Cart</button>
+                      <p class="price" data-price="240.00">₹249.00</p>
+                      <button class="add-to-cart-btn" data-name="RedChilli NonVeg Burger" data-price="240.00">Add to Cart</button>
                   </div>
               </div>
           </div>
@@ -125,8 +143,8 @@
                   </div>
                   <div class="team-text">
                       <h2>Double Dekker Burger</h2>
-                      <p class="price" data-price="9.00">$9.00</p>
-                      <button class="add-to-cart-btn" data-name="Double Dekker Burger" data-price="9.00">Add to Cart</button>
+                      <p class="price" data-price="175.00">₹175.00</p>
+                      <button class="add-to-cart-btn" data-name="Double Dekker Burger" data-price="175.00">Add to Cart</button>
                   </div>
               </div>
           </div>
@@ -142,8 +160,8 @@
                   </div>
                   <div class="team-text">
                       <h2>FrenchFries Hamburger</h2>
-                      <p class="price" data-price="9.00">$9.00</p>
-                      <button class="add-to-cart-btn" data-name="FrenchFries Hamburger" data-price="9.00">Add to Cart</button>
+                      <p class="price" data-price="349.00">₹349.00</p>
+                      <button class="add-to-cart-btn" data-name="FrenchFries Hamburger" data-price="349.00">Add to Cart</button>
                   </div>
               </div>
           </div>
@@ -159,116 +177,123 @@
                   </div>
                   <div class="team-text">
                       <h2>Capybara Meat Burger</h2>
-                      <p class="price" data-price="9.00">$9.00</p>
-                      <button class="add-to-cart-btn" data-name="Capybara Meat Burger" data-price="9.00">Add to Cart</button>
+                      <p class="price" data-price="119.00">₹119.00</p>
+                      <button class="add-to-cart-btn" data-name="Capybara Meat Burger" data-price="119.00">Add to Cart</button>
                   </div>
               </div>
-
-
       </div>
   </div>
 </div>
+<!-- Burger Menu End -->
 
-
-<div class="container">
-    <div class="cart-summary" id="cart-summary">
-        <h2>Your Cart</h2>
-        <div class="cart-items" id="cart-items">
-            <!-- Cart items will be dynamically added here -->
-        </div>
-        <div class="cart-total" id="cart-total">
-            <h3>Total: $0.00</h3>
-        </div>
-       <form action="" >
-        <button type="submit" class="submit-btn" id="submit-btn">Checkout</button>
-       </form>
-
-    </div>
-</div>
 
 
 <script src="script.js"></script>
-<script >
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const cartItemsContainer = document.getElementById('cart-items');
-        const cartTotal = document.getElementById('cart-total');
-    
-        // Function to update the total price
-        function updateTotal() {
-            let total = 0;
-            const itemElements = cartItemsContainer.getElementsByClassName('cart-item');
-            
-            Array.from(itemElements).forEach(item => {
-                const priceElement = item.querySelector('.price');
-                const price = parseFloat(priceElement.getAttribute('data-price'));
-                const quantity = parseInt(item.querySelector('input[type="number"]').value);
-                total += price * quantity;
-            });
-    
-            cartTotal.querySelector('h3').textContent = `Total: $${total.toFixed(2)}`;
+    // Function to update the total price
+    function updateTotal() {
+        let total = 0;
+        const itemElements = cartItemsContainer.getElementsByClassName('cart-item');
+
+        Array.from(itemElements).forEach(item => {
+            const priceElement = item.querySelector('.price');
+            const price = parseFloat(priceElement.getAttribute('data-price'));
+            const quantity = parseInt(item.querySelector('input[type="number"]').value);
+            total += price * quantity;
+        });
+
+        cartTotal.querySelector('h3').textContent = `Total: ₹${total.toFixed(2)}`;
+        localStorage.setItem('cartTotal', total.toFixed(2));
+    }
+
+    // Function to add an item to the cart
+    function addItemToCart(name, price) {
+        const existingItem = Array.from(cartItemsContainer.getElementsByClassName('cart-item')).find(item => {
+            return item.querySelector('h3').textContent === name;
+        });
+
+        if (existingItem) {
+            const quantityInput = existingItem.querySelector('input[type="number"]');
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+        } else {
+            const cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+            cartItem.innerHTML = `
+                <img src="/static/img/${name.replace(/ /g, '').toLowerCase()}.png" alt="${name}">
+                <div class="item-details">
+                    <h3>${name}</h3>
+                    <p class="price" data-price="${price}">₹${price}</p>
+                    <input type="number" value="1" min="1">
+                    <button class="remove-btn">Remove</button>
+                </div>
+            `;
+            cartItemsContainer.appendChild(cartItem);
         }
-    
-        // Function to add an item to the cart
-        function addItemToCart(name, price) {
-            // Check if item already exists in the cart
-            const existingItem = Array.from(cartItemsContainer.getElementsByClassName('cart-item')).find(item => {
-                return item.querySelector('h3').textContent === name;
-            });
-    
-            if (existingItem) {
-                // Update quantity if item already exists
-                const quantityInput = existingItem.querySelector('input[type="number"]');
-                quantityInput.value = parseInt(quantityInput.value) + 1;
-            } else {
-                // Create a new cart item
-                const cartItem = document.createElement('div');
-                cartItem.className = 'cart-item';
-                cartItem.innerHTML = `
-                    <img src="/static/img/${name .replace(/ /g, '').toLowerCase()}.png" alt="${name}">
-                    <div class="item-details">
-                        <h3>${name}</h3>
-                        <p class="price" data-price="${price}">$${price}</p>
-                        <input type="number" value="1" min="1">
-                        <button class="remove-btn">Remove</button>
-                    </div>
-                `;
-                cartItemsContainer.appendChild(cartItem);
-            }
-    
+
+        updateTotal();
+    }
+
+    // Event delegation for handling clicks on "Add to Cart" buttons
+    document.addEventListener('click', event => {
+        if (event.target.classList.contains('add-to-cart-btn')) {
+            const button = event.target;
+            const name = button.getAttribute('data-name');
+            const price = parseFloat(button.getAttribute('data-price'));
+            addItemToCart(name, price);
+        }
+    });
+
+    // Event delegation for handling quantity changes
+    cartItemsContainer.addEventListener('input', event => {
+        if (event.target.type === 'number') {
             updateTotal();
         }
-    
-        // Event delegation for handling clicks on "Add to Cart" buttons
-        document.addEventListener('click', event => {
-            if (event.target.classList.contains('add-to-cart-btn')) {
-                const button = event.target;
-                const name = button.getAttribute('data-name');
-                const price = parseFloat(button.getAttribute('data-price'));
-                addItemToCart(name, price);
-            }
-        });
-    
-        // Event delegation for handling quantity changes
-        cartItemsContainer.addEventListener('input', event => {
-            if (event.target.type === 'number') {
-                updateTotal();
-            }
-        });
-    
-        // Event delegation for handling remove button clicks
-        cartItemsContainer.addEventListener('click', event => {
-            if (event.target.classList.contains('remove-btn')) {
-                const item = event.target.closest('.cart-item');
-                item.remove();
-                updateTotal();
-            }
-        });
-    
-        // Initial total update
-        updateTotal();
     });
-    
+
+    // Event delegation for handling remove button clicks
+    cartItemsContainer.addEventListener('click', event => {
+        if (event.target.classList.contains('remove-btn')) {
+            const item = event.target.closest('.cart-item');
+            item.remove();
+            updateTotal();
+        }
+    });
+
+    // Load cart items from local storage
+    function loadCart() {
+        const savedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+        savedCart.forEach(item => {
+            addItemToCart(item.name, item.price);
+            const cartItem = cartItemsContainer.lastElementChild;
+            cartItem.querySelector('input[type="number"]').value = item.quantity;
+        });
+        updateTotal();
+    }
+
+    // Save cart items to local storage
+    function saveCart() {
+        const cartItems = [];
+        const itemElements = cartItemsContainer.getElementsByClassName('cart-item');
+        Array.from(itemElements).forEach(item => {
+            const name = item.querySelector('h3').textContent;
+            const price = parseFloat(item.querySelector('.price').getAttribute('data-price'));
+            const quantity = parseInt(item.querySelector('input[type="number"]').value);
+            cartItems.push({ name, price, quantity });
+        });
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+
+    // Save cart data on page unload
+    window.addEventListener('beforeunload', saveCart);
+
+    // Initial load of cart items
+    loadCart();
+});
+
     
 </script>
  

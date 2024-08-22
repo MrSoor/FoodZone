@@ -1,61 +1,98 @@
-{% extends "base.html" %}
-{% block content %}
 
-<div class="page-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2>Checkout</h2>
-            </div>
-        </div>
-    </div>
-  </div>
+    {% extends "base.html" %}
 
-  <div class="container">
-    <div class="cart-summary" id="cart-summary">
-        <h2>Your Cart</h2>
-        <div class="cart-items" id="cart-items">
-            <div class="cart-item" id="cart-item-1">
-                <img src="/static/img/burger.jpg" alt="Mini Cheese Burger">
-                <div class="item-details">
-                    <h3>Mini Cheese Burger</h3>
-                    <p>$9.00</p>
-                    <input type="number" id="quantity-1" value="1" min="1">
-                    <button class="remove-btn" id="remove-btn-1">Remove</button>
+    {% block content %}
+    <!-- Page Header Start -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Checkout</h2>
                 </div>
             </div>
-            <!-- Add more cart items here -->
-        </div>
-        <div class="cart-total" id="cart-total">
-            <h3>Total: $9.00</h3>
         </div>
     </div>
+    <!-- Page Header End -->
 
-    <div class="checkout-form" id="checkout-form">
-        <h2>Checkout</h2>
-        <form>
-            <div class="form-group" id="name-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+    <!-- Checkout Start -->
+    <div class="container" style="padding-right: 688px;">
+        <div class="cart-summary" id="cart-summary">
+            <h2>Your Cart</h2>
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be dynamically added here -->
             </div>
-            <div class="form-group" id="email-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+            <div class="cart-total" id="cart-total">
+                <h3>Total: $0.00</h3>
             </div>
-            <div class="form-group" id="address-group">
-                <label for="address">Address:</label>
-                <textarea id="address" name="address" required></textarea>
-            </div>
-            <div class="form-group" id="payment-group">
-                <label for="payment">Payment Method:</label>
-                <select id="payment" name="payment" required>
-                    <option value="credit-card">Credit Card</option>
-                    <option value="paypal">PayPal</option>
-                </select>
-            </div>
-            <button type="submit" class="submit-btn" id="submit-btn">Place Order</button>
-        </form>
+            <form action="get">
+                <button type="submit" class="submit-btn" id="submit-btn">Place Order</button>
+            </form>
+        </div>
     </div>
-</div>
-                        
-{% endblock  %}
+    
+    <!-- Checkout End -->
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+    
+            // Function to load cart items from local storage
+            function loadCart() {
+                const savedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+                savedCart.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <img src="/static/img/${item.name.replace(/ /g, '').toLowerCase()}.png" alt="${item.name}">
+                        <div class="item-details">
+                            <h3>${item.name}</h3>
+                            <p class="price" data-price="${item.price}">₹${item.price.toFixed(2)}</p>
+                            <input type="number" value="${item.quantity}" min="1">
+                            <button class="remove-btn">Remove</button>
+                        </div>
+                    `;
+                    cartItemsContainer.appendChild(cartItem);
+                });
+                updateTotal();
+            }
+    
+            // Function to update the total price
+            function updateTotal() {
+                let total = 0;
+                const itemElements = cartItemsContainer.getElementsByClassName('cart-item');
+    
+                Array.from(itemElements).forEach(item => {
+                    const priceElement = item.querySelector('.price');
+                    const price = parseFloat(priceElement.getAttribute('data-price'));
+                    const quantity = parseInt(item.querySelector('input[type="number"]').value);
+                    total += price * quantity;
+                });
+    
+                cartTotal.querySelector('h3').textContent = `Total: ₹${total.toFixed(2)}`;
+            }
+    
+            // Event delegation for handling quantity changes
+            cartItemsContainer.addEventListener('input', event => {
+                if (event.target.type === 'number') {
+                    updateTotal();
+                }
+            });
+    
+            // Event delegation for handling remove button clicks
+            cartItemsContainer.addEventListener('click', event => {
+                if (event.target.classList.contains('remove-btn')) {
+                    const item = event.target.closest('.cart-item');
+                    item.remove();
+                    updateTotal();
+                }
+            });
+    
+            // Initial load of cart items
+            loadCart();
+        });
+    </script>
+    
+    {% endblock %}
+
