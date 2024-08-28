@@ -3,10 +3,10 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>FoodZone</title>
+        <title>
+            {% block title %}Home{% endblock title %}
+        </title>        
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="Free Website Template" name="keywords">
-        <meta content="Free Website Template" name="description">
 
         <!-- Favicon -->
         <link href="/static/img/favicon.ico" rel="icon">
@@ -46,22 +46,22 @@
                         <a href="/team" class="nav-item nav-link">Chef</a>
                         <a href="/menu" class="nav-item nav-link">Menu</a>
                         <a href="/booking" class="nav-item nav-link">Booking</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu">
-                                <a href="/blog" class="dropdown-item">Blog Grid</a>
-                                <a href="/single" class="dropdown-item">Blog Detail</a>
-                            </div>
                         </div>
                         <a href="/contact" class="nav-item nav-link">Contact</a>
                     </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Signup</a>
-                        <div class="dropdown-menu">
-                            <a href="/login" class="dropdown-item">Login</a>
-                            <a href="/signup" class="dropdown-item">Signup</a>
-                        </div>
-                    </div>
+                    {% if request.user.is_authenticated %}
+          <li><a class="btn btn-outline-warning p-2 m-1" href="/logout/">Logout</a></li>
+            
+          
+          {% else %}
+          <li class="dropdown"><a href="#"><span>SignIn</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/signup/"><i class="fa fa-user" aria-hidden="true"></i>Sign Up</a></li>
+              <li><a href="/login/"><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
+            
+            </ul>
+          </li>
+          {% endif %}
                 </div>
             </div>
         </div>

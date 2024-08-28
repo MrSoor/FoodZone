@@ -8,9 +8,6 @@ def index(request):
 def about(request):
         return render(request,"about.html")
     
-def blog(request):
-        return render(request,"blog.html")
-    
 def booking(request):
         return render(request,"booking.html")
     
@@ -38,11 +35,11 @@ def single(request):
 def team(request):
         return render(request,"team.html")
 
-def login(request):
-        return render(request,"login.html")
+# def login(request):
+#         return render(request,"login.html")
 
-def signup(request):
-        return render(request,"signup.html")
+# def signup(request):
+#         return render(request,"signup.html")
 
 def burgermenu(request):
         return render(request,"burgermenu.html")
