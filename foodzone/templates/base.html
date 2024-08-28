@@ -46,19 +46,29 @@
                         <a href="/team" class="nav-item nav-link">Chef</a>
                         <a href="/menu" class="nav-item nav-link">Menu</a>
                         <a href="/booking" class="nav-item nav-link">Booking</a>
-                        </div>
+                        
                         <a href="/contact" class="nav-item nav-link">Contact</a>
                     </div>
-                    {% if request.user.is_authenticated %}
+                    </div>
+
+            {% if request.user.is_authenticated %}
           <li><a class="btn btn-outline-warning p-2 m-1" href="/logout/">Logout</a></li>
-            
-          
           {% else %}
-          <li class="dropdown"><a href="#"><span>SignIn</span> <i class="bi bi-chevron-down"></i></a>
+          {% comment %} <li class="dropdown"><a href="#"><span>SignIn</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/signup/"><i class="fa fa-user" aria-hidden="true"></i>Sign Up</a></li>
               <li><a href="/login/"><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
-            
+             {% endcomment %}
+
+              <div class="dropdown ">
+                <button class="btn btn-bg-white text-white dropdown-toggle my-2 " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Signup
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item fa fa-user" href="/login/">Login</a>
+                  <a class="dropdown-item fa fa-user" href="/signup/">Signup</a>
+                </div>
+              </div>
             </ul>
           </li>
           {% endif %}
