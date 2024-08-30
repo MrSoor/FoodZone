@@ -26,165 +26,164 @@
     <div class="cart-summary" id="cart-summary">
         <h2>Your Cart</h2>
         <div class="cart-items" id="cart-items">
-            <!-- Cart items will be dynamically added here -->
         </div>
         <div class="cart-total" id="cart-total">
             <h3>Total: ₹0.00</h3>
         </div>
        <form action="/checkout" >
         <button type="submit" class="submit-btn" id="submit-btn">Checkout</button>
+        <button type="button" class="clear-cart-btn" id="clear-cart-btn">Clear Cart</button>
        </form>
-
     </div>
 </div>
 <!-- Checkout End -->
 
 <!-- Burger Menu Start -->
 <div class="team">
-  <div class="container">
-      <div class="section-header text-center">
-          <p>Our Menu</p>
-          <h2>Our All Burger</h2>
-      </div>
+    <div class="container">
+        <div class="section-header text-center">
+            <p>Our Menu</p>
+            <h2>Our All Burger</h2>
+        </div>
 
-    <div class="row">
-        <!-- Repeat this block for each item in the menu -->
-        <div class="col-lg-3 col-md-6">
-            <div class="team-item">
-                <div class="team-img">
-                    <img src="/static/img/vageburger.png" alt="VageBurger">
-                    <div class="team-social">
-                        <a href="#"><i class="fa fa-eye"></i></a>
+        <div class="row">
+            <!-- Vage Burger -->
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/static/img/vageburger.png" alt="VageBurger">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Vage Burger</h2>
+                        <p class="price" data-price="199.00">₹199.00</p>
+                        <button class="add-to-cart-btn" data-name="Vage Burger" data-price="199.00">Add to Cart</button>
                     </div>
                 </div>
-                <div class="team-text">
-                    <h2>Vage Burger</h2>
-                    <p class="price" data-price="199.00">₹199.00</p>
-                    <button class="add-to-cart-btn" data-name="Vage Burger" data-price="199.00">Add to Cart</button>
+            </div>
+
+            <!-- Craiyon Burger -->
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/static/img/craiyonburger.png" alt="CraiyonBurger">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Craiyon Burger</h2>
+                        <p class="price" data-price="249.00">₹249.00</p>
+                        <button class="add-to-cart-btn" data-name="Craiyon Burger" data-price="249.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cheese Burger -->
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/static/img/cheeseburger.png" alt="CheeseBurger">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Cheese Burger</h2>
+                        <p class="price" data-price="99.00">₹99.00</p>
+                        <button class="add-to-cart-btn" data-name="Cheese Burger" data-price="99.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vegan Burger -->
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/static/img/veganburger.png" alt="VeganBurger">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Vegan Burger</h2>
+                        <p class="price" data-price="299.00">₹299.00</p>
+                        <button class="add-to-cart-btn" data-name="Vegan Burger" data-price="299.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RedChilli NonVeg Burger -->
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/static/img/redchillinonvegburger.png" alt="RedChilliNonVegBurger">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>RedChilli NonVeg Burger</h2>
+                        <p class="price" data-price="240.00">₹240.00</p>
+                        <button class="add-to-cart-btn" data-name="RedChilli NonVeg Burger" data-price="240.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Double Dekker Burger -->
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/static/img/doubledekkerburger.png" alt="DoubleDekkerBurger">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Double Dekker Burger</h2>
+                        <p class="price" data-price="175.00">₹175.00</p>
+                        <button class="add-to-cart-btn" data-name="Double Dekker Burger" data-price="175.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FrenchFries Hamburger -->
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/static/img/frenchfrieshamburger.png" alt="FrenchFriesHamburger">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>FrenchFries Hamburger</h2>
+                        <p class="price" data-price="349.00">₹349.00</p>
+                        <button class="add-to-cart-btn" data-name="FrenchFries Hamburger" data-price="349.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Capybara Meat Burger -->
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/static/img/capybaraMeatburger.png" alt="CapybaraMeatBurger">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Capybara Meat Burger</h2>
+                        <p class="price" data-price="119.00">₹119.00</p>
+                        <button class="add-to-cart-btn" data-name="Capybara Meat Burger" data-price="119.00">Add to Cart</button>
+                    </div>
                 </div>
             </div>
         </div>
-
-
-
-          <div class="col-lg-3 col-md-6">
-              <div class="team-item">
-                  <div class="team-img">
-                      <img src="/static/img/craiyonburger.png" alt="CraiyonBurger">
-                      <div class="team-social">
-                          <a href="#"><i class="fa fa-eye"></i></a>
-                      </div>
-                  </div>
-                  <div class="team-text">
-                      <h2>Craiyon Burger</h2>
-                      <p class="price" data-price="249.00">₹249.00</p>
-                    <button class="add-to-cart-btn" data-name="Craiyon Burger" data-price="249.00">Add to Cart</button>
-                  </div>
-              </div>
-          </div>
-
-
-          <div class="col-lg-3 col-md-6">
-              <div class="team-item">
-                  <div class="team-img">
-                      <img src="/static/img/cheeseburger.png" alt="CheeseBurger">
-                      <div class="team-social">
-                          <a href="#"><i class="fa fa-eye"></i></a>
-                      </div>
-                  </div>
-                  <div class="team-text">
-                      <h2>Cheese Burger</h2>
-                      <p class="price" data-price="99.00">₹99.00</p>
-                      <button class="add-to-cart-btn" data-name="Cheese Burger" data-price="99.00">Add to Cart</button>
-                  </div>
-              </div>
-          </div>
-
-
-          <div class="col-lg-3 col-md-6">
-              <div class="team-item">
-                  <div class="team-img">
-                      <img src="/static/img/veganburger.png" alt="VeganBurger">
-                      <div class="team-social">
-                          <a href="#"><i class="fa fa-eye"></i></a>
-                      </div>
-                  </div>
-                  <div class="team-text">
-                      <h2>Vegan Burger</h2>
-                      <p class="price" data-price="299.00">₹299.00</p>
-                      <button class="add-to-cart-btn" data-name="Vegan Burger" data-price="299.00">Add to Cart</button>
-                  </div>
-              </div>
-          </div>
-
-
-          <div class="col-lg-3 col-md-6">
-              <div class="team-item">
-                  <div class="team-img">
-                      <img src="/static/img/redchillinonvegburger.png" alt="RedChilliNonVegBurger">
-                      <div class="team-social">
-                          <a href="#"><i class="fa fa-eye"></i></a>
-                      </div>
-                  </div>
-                  <div class="team-text">
-                      <h2>RedChilli NonVeg Burger</h2>
-                      <p class="price" data-price="240.00">₹249.00</p>
-                      <button class="add-to-cart-btn" data-name="RedChilli NonVeg Burger" data-price="240.00">Add to Cart</button>
-                  </div>
-              </div>
-          </div>
-
-
-          <div class="col-lg-3 col-md-6">
-              <div class="team-item">
-                  <div class="team-img">
-                      <img src="/static/img/doubledekkerburger.png" alt="DoubleDekkerBurger">
-                      <div class="team-social">
-                          <a href="#"><i class="fa fa-eye"></i></a>
-                      </div>
-                  </div>
-                  <div class="team-text">
-                      <h2>Double Dekker Burger</h2>
-                      <p class="price" data-price="175.00">₹175.00</p>
-                      <button class="add-to-cart-btn" data-name="Double Dekker Burger" data-price="175.00">Add to Cart</button>
-                  </div>
-              </div>
-          </div>
-
-
-          <div class="col-lg-3 col-md-6">
-              <div class="team-item">
-                  <div class="team-img">
-                      <img src="/static/img/frenchfrieshamburger.png" alt="FrenchFriesHamburger">
-                      <div class="team-social">
-                          <a href="#"><i class="fa fa-eye"></i></a>
-                      </div>
-                  </div>
-                  <div class="team-text">
-                      <h2>FrenchFries Hamburger</h2>
-                      <p class="price" data-price="349.00">₹349.00</p>
-                      <button class="add-to-cart-btn" data-name="FrenchFries Hamburger" data-price="349.00">Add to Cart</button>
-                  </div>
-              </div>
-          </div>
-
-
-          <div class="col-lg-3 col-md-6">
-              <div class="team-item">
-                  <div class="team-img">
-                      <img src="/static/img/capybaraMeatburger.png" alt="CapybaraMeatBurger">
-                      <div class="team-social">
-                          <a href="#"><i class="fa fa-eye"></i>
-                      </div>
-                  </div>
-                  <div class="team-text">
-                      <h2>Capybara Meat Burger</h2>
-                      <p class="price" data-price="119.00">₹119.00</p>
-                      <button class="add-to-cart-btn" data-name="Capybara Meat Burger" data-price="119.00">Add to Cart</button>
-                  </div>
-              </div>
-      </div>
-  </div>
+    </div>
 </div>
 <!-- Burger Menu End -->
 
@@ -197,19 +196,19 @@
         </div>
 
         <div class="row">
-            <!-- Repeat this block for each item in the snacks menu -->
+            <!-- Patato Fries -->
             <div class="col-lg-3 col-md-6">
                 <div class="team-item">
                     <div class="team-img">
-                        <img src="/static/img/snack-1.jpg" alt="French Fries">
+                        <img src="/static/img/patatofries.png" alt="Patato Fries">
                         <div class="team-social">
                             <a href="#"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                     <div class="team-text">
-                        <h2>French Fries</h2>
+                        <h2>Patato Fries</h2>
                         <p class="price" data-price="99.00">₹99.00</p>
-                        <button class="add-to-cart-btn" data-name="French Fries" data-price="99.00">Add to Cart</button>
+                        <button class="add-to-cart-btn" data-name="Patato Fries" data-price="99.00">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -223,7 +222,7 @@
                         </div>
                     </div>
                     <div class="team-text">
-                        <h2>Onion Rings</h2>
+                        <h2>Millet Nachos</h2>
                         <p class="price" data-price="129.00">₹129.00</p>
                         <button class="add-to-cart-btn" data-name="Onion Rings" data-price="129.00">Add to Cart</button>
                     </div>
@@ -233,15 +232,15 @@
             <div class="col-lg-3 col-md-6">
                 <div class="team-item">
                     <div class="team-img">
-                        <img src="/static/img/snack-3.jpg" alt="Chicken Nuggets">
+                        <img src="/static/img/bananasnacks.png" alt="Banana Snacks">
                         <div class="team-social">
                             <a href="#"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                     <div class="team-text">
-                        <h2>Chicken Nuggets</h2>
+                        <h2>Banana Snacks</h2>
                         <p class="price" data-price="199.00">₹199.00</p>
-                        <button class="add-to-cart-btn" data-name="Chicken Nuggets" data-price="199.00">Add to Cart</button>
+                        <button class="add-to-cart-btn" data-name="Banana Snacks" data-price="199.00">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -249,15 +248,15 @@
             <div class="col-lg-3 col-md-6">
                 <div class="team-item">
                     <div class="team-img">
-                        <img src="/static/img/snack-4.jpg" alt="Garlic Bread">
+                        <img src="/static/img/frenchfries.png" alt="French Fries">
                         <div class="team-social">
                             <a href="#"><i class="fa fa-eye"></i></a>
                         </div>
                     </div>
                     <div class="team-text">
-                        <h2>Garlic Bread</h2>
+                        <h2>French Fries</h2>
                         <p class="price" data-price="89.00">₹89.00</p>
-                        <button class="add-to-cart-btn" data-name="Garlic Bread" data-price="89.00">Add to Cart</button>
+                        <button class="add-to-cart-btn" data-name="French Fries" data-price="89.00">Add to Cart</button>
                     </div>
                 </div>
             </div>
@@ -266,6 +265,81 @@
 </div>
 <!-- Snacks Menu End -->
 
+
+<!-- Beverages Menu Start -->
+<div class="team">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>Our Menu</p>
+            <h2>Our All Beverages</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/static/img/caramelmacchiato.png" alt="Caramel Macchiato">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Caramel Macchiato</h2>
+                        <p class="price" data-price="145.00">₹145.00</p>
+                        <button class="add-to-cart-btn" data-name="Caramel Macchiato" data-price="145.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/static/img/singlecupbrew.png" alt="Single Cup Brew">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Single Cup Brew</h2>
+                        <p class="price" data-price="149.00">₹149.00</p>
+                        <button class="add-to-cart-btn" data-name="Single Cup Brew" data-price="149.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/static/img/caffeamericano.png" alt="Caffe Americano">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Caffe Americano</h2>
+                        <p class="price" data-price="99.00">₹99.00</p>
+                        <button class="add-to-cart-btn" data-name="Caffe Americano" data-price="99.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/static/img/standardblackcoffee.png" alt="Standard black coffee">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Standard black coffee</h2>
+                        <p class="price" data-price="175.00">₹175.00</p>
+                        <button class="add-to-cart-btn" data-name="Standard black coffee" data-price="175.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
 
 
 <script src="script.js"></script>
