@@ -233,6 +233,9 @@ input[type="number"] {
     font-size: 18px;
     font-weight: bold;
 }
+.price {
+    font-weight: bold;
+}
 
 .checkout-form .form-group {
     margin-bottom: 15px;

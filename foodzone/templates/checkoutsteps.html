@@ -1,0 +1,43 @@
+{% block title %}Checkout steps{% endblock title %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Progress Bar</title>
+    <link rel="stylesheet" href="/static/css/steps.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get all steps
+            const steps = document.querySelectorAll('.step');
+            // Mark all steps as completed
+            steps.forEach(step => {
+                step.classList.add('completed');
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div class="checkout-container">
+    <h2>Checkout Progress</h2>
+    <div class="progress-bar">
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-title">Shipping</div>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-title">Payment</div>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-title">Status</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock %}

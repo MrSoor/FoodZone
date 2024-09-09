@@ -14,6 +14,7 @@ urlpatterns = [
     # path('signup',views.signup,name="signup"),
     path('burgermenu',views.burgermenu,name="burgermenu"),
     path('checkout',views.checkout,name="checkout"),
+    path('checkoutsteps',views.checkoutsteps,name="checkoutsteps"),
 
     
 ]
