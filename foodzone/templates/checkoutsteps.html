@@ -1,43 +1,221 @@
-{% block title %}Checkout steps{% endblock title %}
-{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout Progress Bar</title>
-    <link rel="stylesheet" href="/static/css/steps.css">
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Get all steps
-            const steps = document.querySelectorAll('.step');
-            // Mark all steps as completed
-            steps.forEach(step => {
-                step.classList.add('completed');
-            });
-        });
-    </script>
+    <title>Checkout Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .checkout-container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            padding: 20px;
+        }
+
+        .billing-section, .cart-section {
+            flex: 1;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .cart-summary {
+            margin-top: 20px;
+            margin-right:20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+
+        .total {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
 
 <div class="checkout-container">
-    <h2>Checkout Progress</h2>
-    <div class="progress-bar">
-        <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-title">Shipping</div>
+    <div class="billing-section">
+        <h2>Checkout</h2>
+        <h3>Billing Address</h3>
+        <div class="form-group">
+            <label for="address">Street Address</label>
+            <input type="text" id="address" placeholder="House/Office Number" required>
         </div>
-        <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-title">Payment</div>
+        <div class="form-group">
+            <label for="apartment">Apartment, suite, unit, etc.</label>
+            <input type="text" id="apartment" placeholder="Apartment, suite, unit, etc.">
         </div>
-        <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-title">Status</div>
+        <div class="form-group">
+            <label for="city">Town / City</label>
+            <input type="text" id="city" placeholder="Mount Morris" required>
         </div>
+        <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" id="state" required>
+        </div>
+        <div class="form-group">
+            <label for="zip">ZIP Code</label>
+            <input type="text" id="zip" required>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" id="different-address">
+            <label for="different-address">Ship to a different address?</label>
+        </div>
+        <form action="/payment">
+            <button type="submit" class="submit-btn" id="submit-btn">continue to Payment</button>
+        </form>    
     </div>
-</div>
 
+    <div class="container" style="padding-left:80px;">
+        <div class="cart-summary" id="cart-summary">
+            <h2>Your Cart</h2>
+            <div class="cart-items" id="cart-items">
+            </div>
+            <div class="cart-total" id="cart-total">
+                <h3>Total: $0.00</h3>
+            </div>
+        </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+    
+        // Function to load cart items from local storage
+        function loadCart() {
+            const savedCart = JSON.parse(localStorage.getItem('cartItems')) || [];
+            savedCart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <img src="/static/img/${item.name.replace(/ /g, '').toLowerCase()}.png" alt="${item.name}" style="width: 50px; height: 50px;">
+                    <div class="item-details">
+                        <h3>${item.name}</h3>
+                        <p class="price" data-price="${item.price}">₹${item.price.toFixed(2)}</p>
+                        <input type="number" value="${item.quantity}" min="1">
+                        <button class="remove-btn">Remove</button>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+            updateTotal();
+        }
+    
+        // Function to update the total price
+        function updateTotal() {
+            let total = 0;
+            const itemElements = cartItemsContainer.getElementsByClassName('cart-item');
+    
+            Array.from(itemElements).forEach(item => {
+                const priceElement = item.querySelector('.price');
+                const price = parseFloat(priceElement.getAttribute('data-price'));
+                const quantity = parseInt(item.querySelector('input[type="number"]').value);
+                total += price * quantity;
+            });
+    
+            cartTotal.querySelector('h3').textContent = `Total: ₹${total.toFixed(2)}`;
+        }
+    
+        // Event delegation for handling quantity changes
+        cartItemsContainer.addEventListener('input', event => {
+            if (event.target.type === 'number') {
+                updateTotal();
+            }
+        });
+    
+        // Event delegation for handling remove button clicks
+        cartItemsContainer.addEventListener('click', event => {
+            if (event.target.classList.contains('remove-btn')) {
+                const item = event.target.closest('.cart-item');
+                item.remove();
+                updateTotal();
+            }
+        });
+    
+        // Load cart items on page load
+        loadCart();
+    
+        // Navigation between steps
+        let currentStep = 1;
+    
+        function showStep(step) {
+            document.querySelectorAll('.form-step').forEach((formStep) => {
+                formStep.classList.remove('active');
+            });
+            document.getElementById(`form-step${step}`).classList.add('active');
+    
+            document.querySelectorAll('.step').forEach((stepElement) => {
+                stepElement.classList.remove('completed');
+            });
+            for (let i = 1; i <= step; i++) {
+                document.getElementById(`step${i}`).classList.add('completed');
+            }
+        }
+    
+        document.getElementById('next-btn').addEventListener('click', function() {
+            currentStep++;
+            showStep(currentStep);
+        });
+    
+        document.getElementById('prev-btn').addEventListener('click', function() {
+            currentStep--;
+            showStep(currentStep);
+        });
+    
+        document.getElementById('confirm-btn').addEventListener('click', function() {
+            alert('Order Confirmed!');
+        });
+    });
+    
+</script>
 </body>
 </html>
-{% endblock %}

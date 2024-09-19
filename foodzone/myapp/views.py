@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from myapp.models import Contact
+from .models import Contact
 from django.http import HttpResponse
 # Create your views here.
 def index(request):
