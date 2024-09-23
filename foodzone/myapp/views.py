@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Contact
 from django.http import HttpResponse
+import requests
 # Create your views here.
 def index(request):
         return render(request,"index.html")
@@ -49,3 +50,7 @@ def checkout(request):
 
 def checkoutsteps(request):
         return render(request,"checkoutsteps.html")
+
+def dashboard(request):
+        return render(request,"dashboard.html")
+

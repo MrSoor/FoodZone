@@ -1636,100 +1636,276 @@ a:focus {
 
 
 /*******************************/
-/********* Sgnup CSS **********/
+/********* Dashboard CSS **********/
 /*******************************/
-.dropdown {
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
     position: relative;
+    margin-left: 20px;
+}
+
+.search-container input {
+    padding: 10px 40px 10px 30px;
+    border: none;
+    border-radius: 4px;
     width: 100%;
+    background-color: transparent;
+    color: #333;
+    outline: none;
 }
 
-.dropdown .dropdown-information {
-    min-height: 150px;
-    margin: 0 0 30px 0;
-    padding: 30px 15px 0 15px;
-    background: rgba(0, 0, 0, .04);
+.search-container i {
+    position: absolute;
+    color: #888;
 }
 
-.dropdown .dropdown-info {
-    position: relative;
+.icons {
+    display: flex;
+    gap: 15px;
+    margin-left: 10px;
+}
+
+.icons i {
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    transition: background 0.3s;
 }
 
-.dropdown .dropdown-icon {
-    position: relative;
-    width: 50px;
-    height: 50px;
+.sidebar ul li a:hover {
+    background-color: #ddd;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+.content {
+    margin-left: 240px;
+    padding: 20px;
+}
+
+.metrics-section {
     display: flex;
-    align-items: center;
+    padding: 20px;
+    gap: 30px;
+}
+
+.metric-card {
+    flex: 1; /* Make cards responsive */
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card h3 {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.metric-value {
+    font-size: 1.5em; /* Increased size for visibility */
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.charts-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 20px;
+
+}
+
+.dashboard, .order-chart-dashboard {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 44%; /* Adjust width for better spacing */
+}
+
+.order-chart-dashboard{
+    margin-right: 15px;
+}
+
+.pie-charts, .order-charts {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.pie-chart, .order-chart {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(#FF6384 0% 81%, #36A2EB 81% 100%);
+    display: flex;
+    margin-bottom: 20px;
     justify-content: center;
-    background: #fbaf32;
-    border-radius: 50px;
+    align-items: center;
 }
 
-.dropdown .dropdown-icon i {
-    font-size: 18px;
-    color: #ffffff;
+.percentage {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.dropdown .dropdown-text {
+.label {
+    position: absolute;
+    bottom: -20px;
+    text-align: center;
+    width: 100%;
+    margin-top: 6px;
+    font-size: 12px;
+}
+
+.pie-chart.total-orders {
+    background: conic-gradient(#FF6384 0% 81%, #FF9F40 81% 100%); /* Red to Orange */
+}
+
+.pie-chart.customer-growth {
+    background: conic-gradient(#36A2EB 0% 70%, #4BC0C0 70% 100%); /* Blue to Teal */
+}
+
+.pie-chart.total-revenue {
+    background: conic-gradient(#FFCE56 0% 65%, #FF6384 65% 100%); /* Yellow to Red */
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100px;
+    }
+    .content {
+        margin-left: 120px;
+    }
+    .charts-container {
+        flex-direction: column;
+    }
+    .dashboard, .order-chart-dashboard {
+        width: 100%;
+    }
+}
+
+
+.order-chart-dashboard {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-charts {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.order-chart {
+    text-align: center;
+}
+
+.percentage {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.label {
+    font-size: 12px;
+}
+
+
+.mountain-chart {
     position: relative;
-    width: calc(100% - 50px);
+    margin-top: -50px;
+    height: 150px;
+}
+
+.y-axis {
+    position: absolute;
+    margin-left: 20px;
+    left: -20px; /* Adjust for better spacing */
+    top: 0;
     display: flex;
     flex-direction: column;
-    padding-left: 15px;
-}
-
-.dropdown .dropdown-text h3 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #719a0a;
-}
-
-.dropdown .dropdown-text p {
-    margin: 0;
-    font-size: 16px;
-    color: #454545;
-}
-
-.dropdown .dropdown-social a {
-    margin-right: 10px;
-    font-size: 18px;
-    color: #fbaf32;
-}
-
-.dropdown .dropdown-social a:hover {
-    color: #719a0a;
-}
-
-.dropdown .dropdown-form iframe {
-    width: 100%;
-    height: 380px;
-    border-radius: 15px;
-    margin-bottom: 25px;
-}
-
-.dropdown .dropdown-form input {
-    padding: 15px;
-    background: none;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, .1);
-}
-
-.dropdown .dropdown-form textarea {
+    justify-content: space-between;
     height: 150px;
-    padding: 8px 15px;
-    background: none;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, .1);
+    margin-bottom: 20px;
 }
 
-.dropdown .help-block ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+.y-axis div {
+    font-size: 12px;
+    margin-left: 10px; /* Adjust for better alignment */
+    color: #333; /* Change color for better visibility */
 }
+
+.x-axis {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 5px; /* Adds space between the chart and the x-axis */
+}
+
+.x-axis div {
+    font-size: 12px;
+    text-align: center;
+    width: 200px; /* Ensures equal spacing for each day */
+    color: #333; /* Change color for better visibility */
+}
+
 
 /*******************************/
 /*********  CSS **********/

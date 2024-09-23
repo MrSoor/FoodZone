@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="sidebar">
+        <h2><a link="/">FoodZone</a></h2>
+        <ul>
+            <li><a href="#"><i class="fas fa-tachometer-alt"></i>Dashboard</a></li>
+            <li><a href="#"><i class="fas fa-list"></i>Order List</a></li>
+            <li><a href="#"><i class="fas fa-info-circle"></i>Order Details</a></li>
+            <li><a href="#"><i class="fas fa-star"></i>Review</a></li>
+            <li><a href="#"><i class="fas fa-utensils"></i>Food</a></li>
+            <li><a href="#"><i class="fas fa-utensil-spoon"></i>Food Details</a></li>
+            <li><a href="#"><i class="fas fa-users"></i>Customer Details</a></li>
+            <li><a href="#"><i class="fas fa-comment-dots"></i>Chat</a></li>
+            <li><a href="#"><i class="fas fa-wallet"></i>Wallet</a></li>
+        </ul>
+    </div>
+    
+    <div class="content">
+        <div class="header">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="icons">
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-comment-dots"></i>
+                <i class="fas fa-cog"></i>
+            </div>
+        </div>
+        
+        <div class="metrics-section">
+            <div class="metric-card">
+                <h3>Total Orders</h3>
+                <p class="metric-value">75</p>
+            </div>
+            <div class="metric-card">
+                <h3>Total Delivered</h3>
+                <p class="metric-value">357</p>
+            </div>
+            <div class="metric-card">
+                <h3>Total Canceled</h3>
+                <p class="metric-value">65</p>
+            </div>
+            <div class="metric-card">
+                <h3>Total Revenue</h3>
+                <p class="metric-value">$128</p>
+            </div>
+        </div>
+
+        <div class="charts-container">
+            <div class="dashboard">
+                <h2>Pie Chart</h2>
+                <div class="pie-charts">
+                    <div class="pie-chart total-orders">
+                        <div class="percentage">81%</div>
+                        <div class="label">Total Orders</div>
+                    </div>
+                    <div class="pie-chart customer-growth">
+                        <div class="percentage">22%</div>
+                        <div class="label">Customer Growth</div>
+                    </div>
+                    <div class="pie-chart total-revenue">
+                        <div class="percentage">62%</div>
+                        <div class="label">Total Revenue</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-chart-dashboard">
+                <h2>Order Chart</h2>
+                <div class="mountain-chart">
+                    <svg width="300" height="150" viewBox="0 0 300 150">
+                        <path d="M 0 120 L 50 50 L 100 80 L 150 30 L 200 60 L 250 20 L 300 100" 
+                              fill="none" stroke="#FF6384" stroke-width="3" />
+                        <circle cx="0" cy="120" r="3" fill="#FF6384"/>
+                        <circle cx="50" cy="50" r="3" fill="#FF6384"/>
+                        <circle cx="100" cy="80" r="3" fill="#FF6384"/>
+                        <circle cx="150" cy="30" r="3" fill="#FF6384"/>
+                        <circle cx="200" cy="60" r="3" fill="#FF6384"/>
+                        <circle cx="250" cy="20" r="3" fill="#FF6384"/>
+                        <circle cx="300" cy="100" r="3" fill="#FF6384"/>
+                    </svg>
+                    <div class="y-axis">
+                        <div>120</div>
+                        <div>90</div>
+                        <div>60</div>
+                        <div>30</div>
+                        <div>0</div>
+                    </div>
+                    <div class="x-axis">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

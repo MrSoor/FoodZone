@@ -15,6 +15,7 @@ urlpatterns = [
     path('burgermenu',views.burgermenu,name="burgermenu"),
     path('checkout',views.checkout,name="checkout"),
     path('checkoutsteps',views.checkoutsteps,name="checkoutsteps"),
+    path('dashboard',views.dashboard,name="dashboard"),
 
     
 ]
