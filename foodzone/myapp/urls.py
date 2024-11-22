@@ -13,6 +13,7 @@ urlpatterns = [
     # path('login',views.login,name="login"),
     # path('signup',views.signup,name="signup"),
     path('burgermenu',views.burgermenu,name="burgermenu"),
+    path('snacksmenu',views.snacksmenu,name="snacksmenu"),
     path('checkout',views.checkout,name="checkout"),
     path('checkoutsteps',views.checkoutsteps,name="checkoutsteps"),
     path('dashboard',views.dashboard,name="dashboard"),

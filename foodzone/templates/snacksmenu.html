@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+<title>
+    {% block title %}BurgerMenu{% endblock title %}
+</title>
+{% block content %}
+<!-- Page Header Start -->
+<div class="page-header">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <h2>Burger Menu</h2>
+          </div>
+          <div class="col-12">
+              <a href="/">Home</a>
+              <a href="/snackmenu">Menu</a>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Checkout Start -->
+<div class="container">
+    <div class="cart-summary" id="cart-summary">
+        <h2>Your Cart</h2>
+        <div class="cart-items" id="cart-items">
+        </div>
+        <div class="cart-total" id="cart-total">
+            <h3>Total: ₹0.00</h3>
+        </div>
+       <form action="/checkout" >
+        <button type="submit" class="submit-btn" id="submit-btn">Checkout</button>
+        <button type="button" class="btn btn-secondary" id="clear-cart-btn">Cleare Cart</button>
+       </form>
+    </div>
+</div>
+<!-- Checkout End -->
+
+<!-- Snacks Menu Start -->
+<div class="team">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>Our Menu</p>
+            <h2>Our All Snacks</h2>
+        </div>
+
+        <div class="row">
+            <!-- Patato Fries -->
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/static/img/patatofries.png" alt="Patato Fries">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Patato Fries</h2>
+                        <p class="price" data-price="99.00"><strong>₹99.00</strong></p>
+                        <button class="add-to-cart-btn btn btn-danger" data-name="Patato Fries" data-price="99.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/static/img/onionrings.png" alt="Onion Rings">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Millet Nachos</h2>
+                        <p class="price" data-price="129.00"><strong>₹129.00</strong></p>
+                        <button class="add-to-cart-btn btn btn-danger" data-name="Onion Rings" data-price="129.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/static/img/bananasnacks.png" alt="Banana Snacks">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Banana Snacks</h2>
+                        <p class="price" data-price="199.00"><strong>₹199.00</strong></p>
+                        <button class="add-to-cart-btn btn btn-danger" data-name="Banana Snacks" data-price="199.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="team-item">
+                    <div class="team-img">
+                        <img src="/static/img/frenchfries.png" alt="French Fries">
+                        <div class="team-social">
+                            <a href="#"><i class="fa fa-eye"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>French Fries</h2>
+                        <p class="price" data-price="89.00"><strong>₹89.00</strong></p>
+                        <button class="add-to-cart-btn btn btn-danger" data-name="French Fries" data-price="89.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Snacks Menu End -->
+
+
+<script src="/static/js/burgermenu.js"></script>
+
+
+ 
+{% endblock %}
+        
