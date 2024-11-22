@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <title>
-        {% block title %}Home{% endblock %}
+        {% block title %}Home{% endblock title %}
     </title>        
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Favicon -->
-    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+    {% comment %} <link href="{% static 'img/favicon.ico' %}" rel="icon"> {% endcomment %}
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Nunito:600,700" rel="stylesheet"> 
