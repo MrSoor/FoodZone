@@ -24,14 +24,14 @@
                 <form action="/login/" method="post">
                     {% csrf_token %}
                     <div class="input-field">
-                        <input class="form-control p-2" id="name" name="email" placeholder="Enter your email" required>
+                        <input class="form-control p-2" id="email" name="email" placeholder="Enter your email" required>
                         <i class="uil uil-envelope icon"></i>
                     </div>
 
                     <div class="input-field">
-                        <input class="form-control p-2" class="password" id="pass1" name="pass1" placeholder="Enter your password" required>
+                        <input class="form-control p-2 password" id="pass1" name="pass1" placeholder="Enter your password" type="password" required>
                         <i class="uil uil-lock icon"></i>
-                        <i class="uil uil-eye-slash showHidePw"></i>
+                        <i class="uil uil-eye-slash showHidePw" id="togglePassword"></i>
                     </div>
 
                     <div class="checkbox-text">
@@ -55,7 +55,10 @@
                 </div>
                 <a href="/" class="btn btn-link">Go Back</a>
             </div>
-           
-     <script src="/static/assets/script.js"></script> 
 
-{% endblock  %}
+        </div> <!-- .forms -->
+    </div> <!-- .container -->
+
+    <script src="/static/assets/script.js"></script> 
+
+{% endblock %}
